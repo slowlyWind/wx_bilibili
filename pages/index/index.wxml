@@ -1,0 +1,41 @@
+<view class="main">
+    <!-- 公共组件头部 -->
+    <MyTitle></MyTitle>
+    <!-- 头部导航栏 -->
+    <view class="nav_wrap">
+        <scroll-view class="nav" scroll-x >
+            <view bindtap="activeNav" data-index="{{index}}" class="nav_item {{index==currentIndexNav?'active':''}}" wx:for="{{navList}}" wx:key="{{index}}">{{item.text}}</view>
+        </scroll-view>
+    </view>
+    <!-- 首页轮播图 -->
+    <view class="slides">
+        <swiper autoplay indicator-dots circular interval="2500" indicator-color="#fff" indicator-active-color="#de688b">
+            <swiper-item wx:for="{{swiperList}}" wx:key="{{index}}">
+                <navigator>
+                    <image src="{{item.imgSrc}}"></image>
+                </navigator>
+            </swiper-item>
+        </swiper>
+    </view>
+    <!-- 首页视频列表 -->
+    <view class="videos_wrap">
+        <navigator wx:for="{{videosList}}" wx:key="{{index}}">
+            <!-- 图片 -->
+            <view class="videos_top">
+                <image mode="widthFix" src="{{item.imgSrc}}"></image>
+                <view class="videos_info">
+                    <view class="video_play">
+                        <text class="icon-film"></text>
+                        <text>{{item.playCount}}</text>
+                    </view>
+                    <view class="video_comments">
+                        <text class="icon-bubble"></text>
+                        <text>{{item.commentCount}}</text>
+                    </view>
+                </view>
+            </view>
+            <!-- 标题 -->
+            <view class="videos_bottom">{{item.desc}}</view>
+        </navigator>
+    </view>
+</view>

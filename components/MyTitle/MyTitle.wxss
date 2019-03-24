@@ -1,0 +1,32 @@
+.my_title{
+    padding: 10rpx;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    flex: 7;
+}
+.search{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user{
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.downApp{
+    flex: 3;
+    font-size: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    border-radius: 10rpx;
+    padding: 5rpx;
+    color: white;
+    text-align: center;
+}
